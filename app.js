@@ -37,11 +37,14 @@ models.User.sync({force: true})
 
   /* 1. Express should be required in all files
      2. "Import" / "use" the route in app.js (app.use('path' subroute)) <--- but also giving us an error at the moment;
-     3. put bodyparser and nunjucks at the top 
-     4. it's MODULES not models 
+     3. put bodyparser and nunjucks at the top
+     4. it's MODULES not models
      5. Liner flow with the .sync promises to ensure we don't try to listen until the sync has been completed
      6. to render root, have a standard: app.get('/', function(req,res){res.render('index');});
-     7. Direct filepath name isn't necessary for routes i.e. /wiki/add because nunjucks is looking for 
+     7. Direct filepath name isn't necessary for routes i.e. /wiki/add because nunjucks is looking for
         any html file inside `views folder as we defined in app.js (app.engine('html', nunjucks.render));
-     8. REST: represntational state transfer 
-     */ 
+     8. REST: represntational state transfer
+     9. Sequelize HOOKS & getter methods are their own object outside of 'defining database'
+     10. Try to handle database stuff outside of router
+     11. There are three ways to write hooks. See: http://docs.sequelizejs.com/manual/tutorial/hooks.html
+     */
